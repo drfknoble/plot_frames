@@ -13,6 +13,8 @@ python -m pip install plot_frames/dist/plot_frames-0.0.1-py3-none-any.whl
 
 Afterwards, the library will be installed.
 
+Alternatively, you can download the wheel from the Releases page.
+
 # **Getting Started**
 
 The following code:
@@ -102,7 +104,10 @@ Afterwards, something similar to the following will be displayed:
 
 # **References**
 
-1. [https://github.com/petercorke/spatialmath-python](https://github.com/petercorke/spatialmath-python).
+1. [https://matplotlib.org/stable/index.html](https://matplotlib.org/stable/index.html).
+2. [https://numpy.org/doc/1.24/](https://numpy.org/doc/1.24/).
+3. [https://petercorke.github.io/spatialmath-python/index.html](https://petercorke.github.io/spatialmath-python/index.html).
+
 
 # **Credit**
 
