@@ -112,10 +112,15 @@ def plot_pose3d(
     if color is None:
         color = "black"
 
-    o = T @ SE3()
-    x = T @ SE3.Trans([1,0,0])
-    y = T @ SE3.Trans([0,1,0])
-    z = T @ SE3.Trans([0,0,1])
+    # o = T @ SE3()
+    # x = T @ SE3.Trans([1,0,0])
+    # y = T @ SE3.Trans([0,1,0])
+    # z = T @ SE3.Trans([0,0,1])
+
+    o = T * SE3([0,0,0])
+    x = T * SE3([1,0,0])
+    y = T * SE3([0,1,0])
+    z = T * SE3([0,0,1])
 
     plot_point3d(o.t)    
     plot_text3d(o.t, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
