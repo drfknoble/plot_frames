@@ -88,6 +88,50 @@ def plot_arrow3d(start, end, ax=None, color=None, **kwargs):
     plot_point3d(start, color=color)
 
 
+
+def plot_rot3d(
+    T,
+    ax=None,
+    color=None,
+    frame="",
+    **kwargs,
+):
+    """
+    Plot 3D rotation
+
+    Example:
+    ...runblock:: pycon
+        >>> from my_graphics import plot_pose3d
+        >>> from spatialmath import *
+        >>> A = SO(3)
+        >>> plot_rot3d(A, frame='A', color="blue");
+    """
+
+    if ax is None:
+        ax = plt.gca()
+
+    if color is None:
+        color = "black"
+
+    o = T * SO3([0,0,0])
+    x = T * SO3([1,0,0])
+    y = T * SO3([0,1,0])
+    z = T * SO3([0,0,1])
+
+    plot_point3d(o.t)    
+    plot_text3d(o.t, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
+    
+    plot_arrow3d(o.t, x.t, color=color, **kwargs)
+    plot_text3d(x.t, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
+
+    plot_arrow3d(o.t, y.t, color=color, **kwargs)
+    plot_text3d(y.t, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
+
+    plot_arrow3d(o.t, z.t, color=color, **kwargs)
+    plot_text3d(z.t, text="Z"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, -0.1, +0.1], **kwargs)
+  
+
+
 def plot_pose3d(
     T,
     ax=None,
@@ -111,11 +155,6 @@ def plot_pose3d(
 
     if color is None:
         color = "black"
-
-    # o = T @ SE3()
-    # x = T @ SE3.Trans([1,0,0])
-    # y = T @ SE3.Trans([0,1,0])
-    # z = T @ SE3.Trans([0,0,1])
 
     o = T * SE3([0,0,0])
     x = T * SE3([1,0,0])

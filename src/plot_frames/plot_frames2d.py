@@ -84,6 +84,45 @@ def plot_arrow2d(start, end, ax=None, color=None, width=0.02, **kwargs):
     )
 
 
+def plot_rot2d(
+    T,
+    ax=None,
+    color=None,
+    frame="",
+    **kwargs,
+):
+    """
+    Plot 2D pose
+
+    Example:
+    ...runblock:: pycon
+        >>> from my_graphics import plot_pose2d
+        >>> from spatialmath import *
+        >>> A = SO(2)
+        >>> plot_rot2d(A, frame='A', color="blue")
+    """
+
+    if ax is None:
+        ax = plt.gca()
+
+    if color is None:
+        color = "black"
+
+    o = T * SO2([0,0])
+    x = T * SO2([1,0])
+    y = T * SO2([0,1])
+
+    plot_point2d(o.t, color=color)    
+    plot_text2d(o.t, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
+    
+    plot_arrow2d(o.t, x.t, color=color, **kwargs)
+    plot_text2d(x.t, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
+
+    plot_arrow2d(o.t, y.t, color=color, **kwargs)
+    plot_text2d(y.t, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
+
+
+
 def plot_pose2d(
     T,
     ax=None,
@@ -99,7 +138,7 @@ def plot_pose2d(
         >>> from my_graphics import plot_pose2d
         >>> from spatialmath import *
         >>> A = SE(2)
-        >>> plot_pose3d(A, frame='A', color="blue")
+        >>> plot_pose2d(A, frame='A', color="blue")
     """
 
     if ax is None:
