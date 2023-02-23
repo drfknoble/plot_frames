@@ -2,6 +2,16 @@
 
 Plotting 2D and 3D coordinate systems can be time-consuming and difficult. As such, I created this repository to help make things a bit easier.
 
+# **Installation**
+
+To install this package, type the following commands into the terminal and press <kbd>Enter</kbd> after each one:
+
+```console
+git clone https://github.com/drfknoble/plot_frames.git
+python -m pip install plot_frames/dist/plot_frames-0.0.1-py3-none-any.whl
+```
+
+Afterwards, the library will be installed.
 
 # **Getting Started**
 
