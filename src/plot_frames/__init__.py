@@ -1,4 +1,5 @@
-from .plot_frames import *
+from .plot_frames2d import *
+from .plot_frames3d import *
 
 __all__ = [
     "plot_text2d",
