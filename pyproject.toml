@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plot_frames"
+version = "0.0.1"
+authors = [
+  { name="Dr Frazer K. Noble", email="f.k.noble@massey.ac.nz" },
+]
+description = "A package for plotting 2D and 3D coordinate systems."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/drfknoble/plot_frames"
+"Bug Tracker" = "https://github.com/drfknoble/plot_frames/issues"

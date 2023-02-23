@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/plot_frames/__init__.py
+src/plot_frames/plot_frames.py
+src/plot_frames.egg-info/PKG-INFO
+src/plot_frames.egg-info/SOURCES.txt
+src/plot_frames.egg-info/dependency_links.txt
+src/plot_frames.egg-info/top_level.txt

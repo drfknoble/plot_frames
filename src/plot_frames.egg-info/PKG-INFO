@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: plot-frames
+Version: 0.0.1
+Summary: A package for plotting 2D and 3D coordinate systems.
+Author-email: "Dr Frazer K. Noble" <f.k.noble@massey.ac.nz>
+Project-URL: Homepage, https://github.com/drfknoble/plot_frames
+Project-URL: Bug Tracker, https://github.com/drfknoble/plot_frames/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# **Introduction**
+
+
+# **References**
+
+1. [https://github.com/petercorke/spatialmath-python](https://github.com/petercorke/spatialmath-python).
+
+# **Credit**
+
+Dr Frazer K. Noble
+Department of Mechanical and Electrical Engineering  
+Massey University  
+Auckland
+New Zealand  
+L: https://www.linkedin.com/in/drfknoble/
+G: https://github.com/drfknoble
