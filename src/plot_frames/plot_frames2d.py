@@ -92,7 +92,7 @@ def plot_rot2d(
     **kwargs,
 ):
     """
-    Plot 2D pose
+    Plot 2D rotation
 
     Example:
     ...runblock:: pycon
@@ -108,18 +108,22 @@ def plot_rot2d(
     if color is None:
         color = "black"
 
-    o = T * SO2([0,0])
-    x = T * SO2([1,0])
-    y = T * SO2([0,1])
+    o = T * np.array([0,0])
+    x = T * np.array([1,0])
+    y = T * np.array([0,1])
 
-    plot_point2d(o.t, color=color)    
-    plot_text2d(o.t, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
+    o = o.flatten()
+    x = x.flatten()
+    y = y.flatten()
+
+    plot_point2d(o, color=color)    
+    plot_text2d(o, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
     
-    plot_arrow2d(o.t, x.t, color=color, **kwargs)
-    plot_text2d(x.t, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
+    plot_arrow2d(o, x, color=color, **kwargs)
+    plot_text2d(x, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
 
-    plot_arrow2d(o.t, y.t, color=color, **kwargs)
-    plot_text2d(y.t, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
+    plot_arrow2d(o, y, color=color, **kwargs)
+    plot_text2d(y, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
 
 
 
@@ -147,15 +151,19 @@ def plot_pose2d(
     if color is None:
         color = "black"
 
-    o = T * SE2([0,0])
-    x = T * SE2([1,0])
-    y = T * SE2([0,1])
+    o = T * np.array([0,0])
+    x = T * np.array([1,0])
+    y = T * np.array([0,1])
 
-    plot_point2d(o.t, color=color)    
-    plot_text2d(o.t, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
+    o = o.flatten()
+    x = x.flatten()
+    y = y.flatten()
+
+    plot_point2d(o, color=color)    
+    plot_text2d(o, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
     
-    plot_arrow2d(o.t, x.t, color=color, **kwargs)
-    plot_text2d(x.t, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
+    plot_arrow2d(o, x, color=color, **kwargs)
+    plot_text2d(x, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
 
-    plot_arrow2d(o.t, y.t, color=color, **kwargs)
-    plot_text2d(y.t, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
+    plot_arrow2d(o, y, color=color, **kwargs)
+    plot_text2d(y, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)

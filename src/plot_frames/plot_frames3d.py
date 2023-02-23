@@ -113,22 +113,27 @@ def plot_rot3d(
     if color is None:
         color = "black"
 
-    o = T * SO3([0,0,0])
-    x = T * SO3([1,0,0])
-    y = T * SO3([0,1,0])
-    z = T * SO3([0,0,1])
+    o = T * np.array([0,0,0])
+    x = T * np.array([1,0,0])
+    y = T * np.array([0,1,0])
+    z = T * np.array([0,0,1])
 
-    plot_point3d(o.t)    
-    plot_text3d(o.t, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
+    o = o.flatten()
+    x = x.flatten()
+    y = y.flatten()
+    z = z.flatten()
+
+    plot_point3d(o)    
+    plot_text3d(o, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
     
-    plot_arrow3d(o.t, x.t, color=color, **kwargs)
-    plot_text3d(x.t, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
+    plot_arrow3d(o, x, color=color, **kwargs)
+    plot_text3d(x, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
 
-    plot_arrow3d(o.t, y.t, color=color, **kwargs)
-    plot_text3d(y.t, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
+    plot_arrow3d(o, y, color=color, **kwargs)
+    plot_text3d(y, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
 
-    plot_arrow3d(o.t, z.t, color=color, **kwargs)
-    plot_text3d(z.t, text="Z"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, -0.1, +0.1], **kwargs)
+    plot_arrow3d(o, z, color=color, **kwargs)
+    plot_text3d(z, text="Z"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, -0.1, +0.1], **kwargs)
   
 
 
@@ -156,20 +161,25 @@ def plot_pose3d(
     if color is None:
         color = "black"
 
-    o = T * SE3([0,0,0])
-    x = T * SE3([1,0,0])
-    y = T * SE3([0,1,0])
-    z = T * SE3([0,0,1])
+    o = T * np.array([0,0,0])
+    x = T * np.array([1,0,0])
+    y = T * np.array([0,1,0])
+    z = T * np.array([0,0,1])
 
-    plot_point3d(o.t)    
-    plot_text3d(o.t, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
+    o = o.flatten()
+    x = x.flatten()
+    y = y.flatten()
+    z = z.flatten()
+
+    plot_point3d(o)    
+    plot_text3d(o, text=r"$\{$"+f"{frame}"+r"$\}$", color=color, delta=-0.25, **kwargs)
     
-    plot_arrow3d(o.t, x.t, color=color, **kwargs)
-    plot_text3d(x.t, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
+    plot_arrow3d(o, x, color=color, **kwargs)
+    plot_text3d(x, text="X"+r"$_"+f"{frame}"+r"$", color=color, delta=[+0.1, -0.1, -0.1], **kwargs)
 
-    plot_arrow3d(o.t, y.t, color=color, **kwargs)
-    plot_text3d(y.t, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
+    plot_arrow3d(o, y, color=color, **kwargs)
+    plot_text3d(y, text="Y"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, +0.1, -0.1], **kwargs)
 
-    plot_arrow3d(o.t, z.t, color=color, **kwargs)
-    plot_text3d(z.t, text="Z"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, -0.1, +0.1], **kwargs)
+    plot_arrow3d(o, z, color=color, **kwargs)
+    plot_text3d(z, text="Z"+r"$_"+f"{frame}"+r"$", color=color, delta=[-0.1, -0.1, +0.1], **kwargs)
   

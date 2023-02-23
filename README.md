@@ -38,27 +38,25 @@ The following code:
 * Creates a new figure,
 * Configures the figure's axes,
 * Creates a 2D system, and
-* Puts text at an X,Y position, draws a 2D arrow, and draws the coordinate system.
+* Draws the 2D pose.
 
 ```python
-fig = plt.figure()
+fig = plt.figure(figsize=(6,6))
 ax = fig.add_subplot()
 
-dims = [0,2]
+dims = [-2,2]
 ax.set_xlim(dims)
 ax.set_ylim(dims)
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.grid(True)
-ax.set_xticks(np.arange(min(dims), max(dims)+1, 0.5))
-ax.set_yticks(np.arange(min(dims), max(dims)+1, 0.5))
+ax.set_xticks(np.arange(min(dims), max(dims)+1, 1.0))
+ax.set_yticks(np.arange(min(dims), max(dims)+1, 1.0))
 
-T = SE2([0.5,0.5])
-print(f"T=\n{T}")
+T = SE2([0,0], unit='deg')
+print(T)
 
-plot_frames.plot_text2d(np.array([0.5,0.5]), text='A')
-plot_frames.plot_arrow2d(np.array([0.0,0.0]), np.array([0.5,0.5]))
-plot_frames.plot_pose2d(T, frame='A', color="blue")
+plot_pose2d(T, frame='T')
 ```  
 Afterwards, something similar to the following will be displayed:
 
@@ -72,13 +70,14 @@ The following code:
 * Creates a new figure,
 * Configures the figure's axes,
 * Creates a 3D system, and
-* Puts text at an X,Y,Z position, draws a 3D arrow, and draws the coordinate system.
+* Draws the 3D pose.
 
 ```python
-fig = plt.figure()
+fig = plt.figure(figsize=(6,6))
 ax = fig.add_subplot(111, projection='3d')
 
-dims=[0,2]
+dims = [-2,2]
+ax.set_proj_type('ortho')
 ax.set_xlim(dims)
 ax.set_ylim(dims)
 ax.set_zlim(dims)
@@ -86,16 +85,14 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
 ax.grid(True)
-ax.set_xticks(np.arange(min(dims), max(dims)+1, 0.5))
-ax.set_yticks(np.arange(min(dims), max(dims)+1, 0.5))
-ax.set_zticks(np.arange(min(dims), max(dims)+1, 0.5))
+ax.set_xticks(np.arange(min(dims), max(dims)+1, 1.0))
+ax.set_yticks(np.arange(min(dims), max(dims)+1, 1.0))
+ax.set_zticks(np.arange(min(dims), max(dims)+1, 1.0))
 
-T = SE3([0.5,0.5,0.0])
-print(f"T=\n{T}")
+T = SE3()
+print(T)
 
-plot_frames.plot_text3d(np.array([0.5,0.5,0.0]), text='A')
-plot_frames.plot_arrow3d(np.array([0.0,0.0,0.0]), np.array([0.5,0.5,0.0]))
-plot_frames.plot_pose3d(T, frame='T', color="blue")
+plot_pose3d(T, frame='T')
 ```
 Afterwards, something similar to the following will be displayed:
 
