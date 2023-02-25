@@ -41,17 +41,7 @@ The following code:
 * Draws the 2D pose.
 
 ```python
-fig = plt.figure(figsize=(6,6))
-ax = fig.add_subplot()
-
-dims = [-2,2]
-ax.set_xlim(dims)
-ax.set_ylim(dims)
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.grid(True)
-ax.set_xticks(np.arange(min(dims), max(dims)+1, 1.0))
-ax.set_yticks(np.arange(min(dims), max(dims)+1, 1.0))
+new_plot2d()
 
 T = SE2([0,0], unit='deg')
 print(T)
@@ -73,21 +63,7 @@ The following code:
 * Draws the 3D pose.
 
 ```python
-fig = plt.figure(figsize=(6,6))
-ax = fig.add_subplot(111, projection='3d')
-
-dims = [-2,2]
-ax.set_proj_type('ortho')
-ax.set_xlim(dims)
-ax.set_ylim(dims)
-ax.set_zlim(dims)
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-ax.grid(True)
-ax.set_xticks(np.arange(min(dims), max(dims)+1, 1.0))
-ax.set_yticks(np.arange(min(dims), max(dims)+1, 1.0))
-ax.set_zticks(np.arange(min(dims), max(dims)+1, 1.0))
+new_plot3d()
 
 T = SE3()
 print(T)
