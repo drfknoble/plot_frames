@@ -26,14 +26,13 @@ from spatialmath import *
 
 The following code:
 * Creates a new figure,
-* Configures the figure's axes,
-* Creates a 2D system, and
-* Draws the 2D pose.
+* Creates a 2D pose, and
+* Plots the 2D pose.
 
 ```python
 new_plot2d()
 
-T = SE2([0,0], unit='deg')
+T = SE2()
 print(T)
 
 plot_pose2d(T, frame='T')
@@ -48,8 +47,7 @@ Afterwards, something similar to the following will be displayed:
 
 The following code:
 * Creates a new figure,
-* Configures the figure's axes,
-* Creates a 3D system, and
+* Creates a 3D pose, and
 * Draws the 3D pose.
 
 ```python
@@ -67,17 +65,11 @@ Afterwards, something similar to the following will be displayed:
 
 # **References**
 
-1. [https://matplotlib.org/stable/index.html](https://matplotlib.org/stable/index.html).
-2. [https://numpy.org/doc/1.24/](https://numpy.org/doc/1.24/).
-3. [https://petercorke.github.io/spatialmath-python/index.html](https://petercorke.github.io/spatialmath-python/index.html).
+1. [https://petercorke.github.io/spatialmath-python/index.html](https://petercorke.github.io/spatialmath-python/index.html).
 
 
 # **Credit**
 
-Dr Frazer K. Noble  
-Department of Mechanical and Electrical Engineering  
-Massey University    
-Auckland  
-New Zealand    
+Dr Frazer K. Noble    
 L: https://www.linkedin.com/in/drfknoble/  
 G: https://github.com/drfknoble  
