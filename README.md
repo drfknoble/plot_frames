@@ -40,7 +40,7 @@ plot_pose2d(T, frame='T')
 ```  
 Afterwards, something similar to the following will be displayed:
 
-![height:320](doc/img/figure_01.png)  
+![height:320](doc/img/figure_02.png)  
 *Figure*: Plot of a 2D pose.
 
 
@@ -62,7 +62,7 @@ plot_pose3d(T, frame='T')
 ```
 Afterwards, something similar to the following will be displayed:
 
-![height:320](doc/img/figure_02.png)  
+![height:320](doc/img/figure_04.png)  
 *Figure*: Plot of a 3D pose.
 
 # **References**
