@@ -12,6 +12,41 @@ from spatialmath import *
 from mpl_toolkits.mplot3d import Axes3D
   
 
+def new_plot3d(dims=None, labels=None, steps=None, **kwargs):
+    """
+    Create new 3D plot
+
+    Example:
+    .. runblock:: pycon
+        >>> from plot_frames import new_plot3d
+        >>> new_plot3d(dims=[-2,2])
+    """
+
+    if dims is None:
+        dims = [-2, 2]
+
+    if labels is None:
+        labels = ['X', 'Y', 'Z']
+
+    if steps is None:
+        steps = 1.0
+
+    fig = plt.figure(figsize=(6,6))
+    ax = fig.add_subplot(111, projection='3d')
+
+    ax.set_proj_type('ortho')
+    ax.set_xlim(dims)
+    ax.set_ylim(dims)
+    ax.set_zlim(dims)
+    ax.set_xlabel(labels[0])
+    ax.set_ylabel(labels[1])
+    ax.set_zlabel(labels[2])
+    ax.grid(True)
+    ax.set_xticks(np.arange(min(dims), max(dims)+1, steps))
+    ax.set_yticks(np.arange(min(dims), max(dims)+1, steps))
+    ax.set_zticks(np.arange(min(dims), max(dims)+1, steps))
+
+
 def plot_text3d(pos, ax=None, color=None, delta=None, text=None, **kwargs):
     """
     Plot 3D text
