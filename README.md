@@ -4,16 +4,7 @@ Plotting 2D and 3D coordinate systems can be time-consuming and difficult. As su
 
 # **Installation**
 
-To install this package, type the following commands into the terminal and press <kbd>Enter</kbd> after each one:
-
-```console
-git clone https://github.com/drfknoble/plot_frames.git
-python -m pip install plot_frames/dist/plot_frames-0.0.1-py3-none-any.whl
-```
-
-Afterwards, the library will be installed.
-
-Alternatively, you can download the wheel from the Releases page.
+To install this package, download the wheel from this repository's Releases page.
 
 # **Getting Started**
 
@@ -25,9 +16,8 @@ The following code:
 
 ```python
 import numpy as np
-import plot_frames
 
-from matplotlib import pyplot as plt
+from plot_frames import *
 from spatialmath import *
 ```
 
