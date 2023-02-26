@@ -33,7 +33,7 @@ def new_plot3d(dims=None, labels=None, steps=None, **kwargs):
 
     fig = plt.figure(figsize=(6,6))
     ax = fig.add_subplot(111, projection='3d')
-
+    ax.set_facecolor("white")
     ax.set_proj_type('ortho')
     ax.set_xlim(dims)
     ax.set_ylim(dims)

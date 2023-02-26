@@ -31,7 +31,7 @@ def new_plot2d(dims=None, labels=None, steps=None, **kwargs):
 
     fig = plt.figure(figsize=(6,6))
     ax = fig.add_subplot()
-    
+    ax.set_facecolor("white")
     ax.set_xlim(dims)
     ax.set_ylim(dims)
     ax.set_xlabel(labels[0])
