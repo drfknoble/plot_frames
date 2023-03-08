@@ -11,7 +11,6 @@ To install this package, download the wheel from this repository's Releases page
 The following code:
 * Imports the `numpy` library as `np` for convenience,
 * Imports the `plot_frames` library,
-* Imports the `pyplot` module from the `matplotlib` library as `plt` for convenience, and
 * Imports all of the modules from the `spatialmath` library.
 
 ```python
